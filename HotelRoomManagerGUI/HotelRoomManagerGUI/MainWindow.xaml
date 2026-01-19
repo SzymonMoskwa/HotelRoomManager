@@ -4,7 +4,7 @@
         xmlns:av="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         mc:Ignorable="av"
-        Title="HotelRoomManager: Menu Główne" 
+        Title="HotelRoomManager" 
         SizeToContent="WidthAndHeight" 
         WindowStartupLocation="CenterScreen" 
         Background="#F0F0F0"

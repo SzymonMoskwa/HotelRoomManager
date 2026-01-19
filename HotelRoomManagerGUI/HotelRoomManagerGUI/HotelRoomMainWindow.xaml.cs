@@ -56,11 +56,12 @@ namespace HotelRoomManagerGUI
 
             if (data is string && (string)data == "ADD_BUTTON")
             {
-                TworzeniePokoji oknoDodawania = new TworzeniePokoji(h1);
+                TworzeniePokoji  oknoDodawania = new TworzeniePokoji(h1);
                 if (oknoDodawania.ShowDialog() == true)
                 {
                     Hotel.CzyZmienionoDane = true;
                     OdswiezWidokPokoi();
+                    AktualizujStatus($"Stworzono nowy hotel");
                 }
             }
             else if (data is Room pokoj)
@@ -71,6 +72,7 @@ namespace HotelRoomManagerGUI
                 {
                     Hotel.CzyZmienionoDane = true;
                     OdswiezWidokPokoi();
+                    AktualizujStatus($"Edytowano dane hotelu");
                 }
             }
         }
