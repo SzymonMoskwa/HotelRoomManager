@@ -1,0 +1,91 @@
+﻿<Page x:Name="StatusBarBottomH" x:Class="HotelRoomManagerGUI.HotelRoomMainWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Height="600" Width="800" Background="#F0F0F0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Plik">
+                    <MenuItem Header="_Otwórz">
+                        <MenuItem Header="Z pliku _XML" Click="MenuOtworzXml_Click"/>
+                        <MenuItem Header="Z bazy _danych" Click="MenuOtworzDb_Click"/>
+                    </MenuItem>
+                    <MenuItem Header="_Zapisz">
+                        <MenuItem Header="Do pliku _XML" Click="MenuZapiszXml_Click"/>
+                        <MenuItem Header="Do bazy _danych" Click="MenuZapiszDb_Click"/>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Button x:Name="BtnWroc" Content="Wróć" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="730,0,0,0" Height="17" Width="70" Background="#D3D3D3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontSize="10" Click="BtnWroc_Click"/>
+
+        <Border Grid.Row="1" Background="White" Padding="15" BorderBrush="#DDD" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Bold"><Run Language="pl-pl" Text="Hotel:"/></TextBlock>
+                <TextBox x:Name="TxtNazwaHotelu" Width="250" Height="30" VerticalContentAlignment="Center">
+                </TextBox>
+            </StackPanel>
+        </Border>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" Margin="10">
+            <ItemsControl x:Name="RoomsControl" Margin="10">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Center" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button x:Name="RoomButton" Margin="10" Width="120" Height="120" Click="RoomButton_Click">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid x:Name="MainGrid">
+                                        <Rectangle x:Name="BackgroundRect" 
+                   RadiusX="8" RadiusY="8" Fill="#999" Stroke="#784330" StrokeThickness="2"/>
+
+                                        <Grid>
+                                            <StackPanel x:Name="RoomInfo" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                <TextBlock Text="POKÓJ" FontSize="10" Foreground="#666" HorizontalAlignment="Center"/>
+                                                <TextBlock Text="{Binding RoomID}" FontWeight="Bold" FontSize="16" TextAlignment="Center"/>
+                                            </StackPanel>
+
+                                            <TextBlock x:Name="PlusIcon" Text="+" FontSize="40" FontWeight="Bold" 
+                       Foreground="#784330" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                       Visibility="Collapsed"/>
+                                        </Grid>
+                                    </Grid>
+
+                                    <ControlTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding}" Value="ADD_BUTTON">
+                                            <Setter TargetName="RoomInfo" Property="Visibility" Value="Collapsed"/>
+                                            <Setter TargetName="PlusIcon" Property="Visibility" Value="Visible"/>
+                                            <Setter TargetName="BackgroundRect" Property="Stroke" Value="#784330"/>
+                                            <Setter TargetName="BackgroundRect" Property="Fill" Value="#999"/>
+                                        </DataTrigger>
+
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="BackgroundRect" Property="Fill" Value="#E1F5FE"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <StatusBar Grid.Row="3" Background="#784330" Foreground="White">
+            <TextBlock x:Name="StatusText" Text="Gotowy" Margin="10,0,0,0"/>
+        </StatusBar>
+    </Grid>
+</Page>

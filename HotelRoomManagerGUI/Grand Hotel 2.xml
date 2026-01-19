@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Grand Hotel 2</Name>
+  <Rooms>
+    <Room xsi:type="StandardRoom">
+      <RoomID>BŁ\2026\420A9</RoomID>
+      <RoomKind>Suite</RoomKind>
+      <Name>Błękit</Name>
+      <Price>270</Price>
+      <AssignedGuests>
+        <Guest>
+          <Imie>Jan</Imie>
+          <Nazwisko>Kowalski</Nazwisko>
+          <Pesel>90101030111</Pesel>
+          <CheckInDate>2026-01-18T13:08:58.0836764+01:00</CheckInDate>
+          <CheckOutDate>2026-01-23T13:08:58.0837071+01:00</CheckOutDate>
+          <GuestId>0</GuestId>
+        </Guest>
+      </AssignedGuests>
+      <HotelId>0</HotelId>
+    </Room>
+    <Room xsi:type="SuiteRoom">
+      <RoomID>KR\2026\4DAA1</RoomID>
+      <RoomKind>Suite</RoomKind>
+      <Name>Królewski</Name>
+      <Price>750.00</Price>
+      <AssignedGuests>
+        <Guest>
+          <Imie>Maciej</Imie>
+          <Nazwisko>Kowal</Nazwisko>
+          <Pesel>80020200222</Pesel>
+          <CheckInDate>2026-01-18T13:08:58.0837347+01:00</CheckInDate>
+          <CheckOutDate>2026-01-30T13:08:58.0837352+01:00</CheckOutDate>
+          <GuestId>0</GuestId>
+        </Guest>
+      </AssignedGuests>
+      <HotelId>0</HotelId>
+    </Room>
+    <Room xsi:type="SuiteRoom">
+      <RoomID>LO\2026\9A875</RoomID>
+      <RoomKind>Studio</RoomKind>
+      <Name>Loża</Name>
+      <Price>16249.00</Price>
+      <AssignedGuests>
+        <Guest>
+          <Imie>Wojciech</Imie>
+          <Nazwisko>Hask</Nazwisko>
+          <Pesel>76321498734</Pesel>
+          <CheckInDate>2026-02-18T00:00:00</CheckInDate>
+          <CheckOutDate>2026-02-19T00:00:00</CheckOutDate>
+          <GuestId>0</GuestId>
+        </Guest>
+      </AssignedGuests>
+      <HotelId>0</HotelId>
+    </Room>
+  </Rooms>
+  <HotelId>0</HotelId>
+</Hotel>

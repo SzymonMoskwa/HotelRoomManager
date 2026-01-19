@@ -1,0 +1,26 @@
+﻿<Window x:Class="HotelRoomManagerGUI.TworzeniePokoji"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelRoomManagerGUI"
+        mc:Ignorable="d"
+        Title="TworzeniePokoji" Height="227" Width="232"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid>
+        <TextBlock TextWrapping="Wrap" Margin="22,10,114,156"><Run Language="pl-pl" Text="Nazwa"/></TextBlock>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Margin="85,10,10,156"/>
+        <TextBox x:Name="TxtPrice" TextWrapping="Wrap" Text="TextBox" Margin="85,41,10,125"/>
+        <TextBox x:Name="TxtName" TextWrapping="Wrap" Text="TextBox" Margin="85,10,10,156"/>
+        <TextBlock TextWrapping="Wrap" Margin="32,41,105,125"><Run Language="pl-pl" Text="Cena"/></TextBlock>
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Margin="85,72,0,0" VerticalAlignment="Top" Width="114" Height="26"/>
+        <TextBlock TextWrapping="Wrap" Margin="22,72,115,94"><Run Language="pl-pl" Text="Rodzaj"/></TextBlock>
+        <TextBlock Text="Klasa pokoju:" Margin="61,107,71,66"/>
+        <RadioButton x:Name="RdStandard" Content="Standard" IsChecked="True" Margin="10,129,129,45"/>
+        <RadioButton x:Name="RdSuite" Content="Apartament " Margin="111,129,-26,45"/>
+        <Button x:Name="BtnZatwierdz" Content="Zatwierdź" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="26" Width="85" Click="BtnZatwierdz_Click"/>
+        <Button x:Name="BtnAnuluj" Content="Anuluj" HorizontalAlignment="Left" Margin="114,160,0,0" VerticalAlignment="Top" Height="26" Width="85" Click="BtnZatwierdz_Click"/>
+
+    </Grid>
+</Window>
